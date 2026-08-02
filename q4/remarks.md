@@ -73,7 +73,7 @@ While I could have done this more easily:
 for (int i = 0; i < combined / 2; i++)
 ```
 
-## Each of the solution does not satisfy $O(\log (m+n))$ they have a linear time complexity of $O(n)$
+## Each of the solutions above does not satisfy $O(\log (m+n))$ they have a linear time complexity of $O(n)$
 
 Take into account how we first analyzed the mathematical properties of the system and then exploited those properties to divide the A+B array into two parts.
 

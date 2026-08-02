@@ -30,5 +30,3 @@ Other approaches that came to my mind:
 
 - Time complexity $O(n)$ 
 - Space complexity $O(1)$ if we do destructive sorting. Even though we just eliminated one `std::unordered_map`
-
-## Take     aways

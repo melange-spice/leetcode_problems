@@ -1,2 +1,2 @@
 # README
-These are my solutions to the leetcode problems done in the sequential manner. `Optimal solutions` of the problems are also present in their respective folders. `Comments in the optimal solution` contain my thoughts on what can be improved by comparing my solution with the optimal one. The `remarks file` contains the summary of my mistakes.
+My solutions to the different leetcode problems including the [neetcode150](https://neetcode.io/roadmap) problems with their `optimal solutions` and some `remarks`.
