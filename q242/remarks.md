@@ -30,3 +30,8 @@ Other approaches that came to my mind:
 
 - Time complexity $O(n)$ 
 - Space complexity $O(1)$ if we do destructive sorting. Even though we just eliminated one `std::unordered_map`
+
+## Takeaways
+- Same conclusion as `q217`: hash maps are efficient if you want to count the frequencies of elements
+
+- The input constraints can be exploited. In this case the input consist of small english alphebets. Which makes the space complexity constant.

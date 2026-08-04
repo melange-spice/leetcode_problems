@@ -7,4 +7,4 @@ I think the best we can do is $O(n)$ via the hashtable approach because we must 
 - The space complexity is $O(n)$ 
 
 ## Takeaways
-- hash maps are pretty cool 
+- hash maps are efficient if you want to count the frequencies of elements
