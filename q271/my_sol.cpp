@@ -66,6 +66,11 @@ class Solution
     {
 
         string encoded;
+        if (inp.size() == 0 && inp[0] == '\0') // edge case: {""}
+        {
+            encoded.append(",|");
+            return encoded;
+        }
 
         for (const char &i : inp)
         {
@@ -140,8 +145,12 @@ class Solution
             }
             else if (*front_itr == ',' && *(front_itr + 1) == '|') // end of token?
             {
-                int int_result = stoi(encoded_word);             // string "72" -> integer 72
-                result.push_back(static_cast<char>(int_result)); // integer 72 -> 'H'
+
+                if (encoded_word.size() != 0)
+                {
+                    int int_result = stoi(encoded_word);             // string "72" -> integer 72
+                    result.push_back(static_cast<char>(int_result)); // integer 72 -> 'H'
+                }
 
                 encoded_word.erase();
 
@@ -153,9 +162,11 @@ class Solution
             }
             else if (*front_itr == ',') // end of word
             {
-
-                int int_result = stoi(encoded_word);             // string "72" -> integer 72
-                result.push_back(static_cast<char>(int_result)); // integer 72 -> 'H'
+                if (encoded_word.size() != 0)
+                {
+                    int int_result = stoi(encoded_word);             // string "72" -> integer 72
+                    result.push_back(static_cast<char>(int_result)); // integer 72 -> 'H'
+                }
 
                 encoded_word.erase();
 
@@ -190,20 +201,19 @@ public:
     {
 
         vector<string> result;
-    
-        //is the input string is empty
-        if (s.size()==1 && s[0]=='|')
+
+        // is the input string is empty
+        if (s.size() == 1 && s[0] == '|')
         {
             result.push_back("");
             return result;
         }
-        
+
         string encoded_token;
         string decoded_token;
 
         while (s.size() > 0)
         {
-            
 
             encoded_token = extract_token(s);
             string word = decode_token(encoded_token);
@@ -219,12 +229,14 @@ int main()
 
     Solution s;
 
-    vector<string> strings = {"Hello","World"};
-    //vector<string> strings = {""};
+    // vector<string> strings = {"Hello","World"};
+    //vector<string> strings = {"", "Hello"};
+    vector<string> strings = {};
 
- // Measures and displays an execution time of a function call.
+    // vector<string> strings = {""};
+
+    // Measures and displays an execution time of a function call.
     const auto start{std::chrono::steady_clock::now()};
-    
 
     string en = s.encode(strings);
     vector<string> r = s.decode(en);
@@ -232,15 +244,13 @@ int main()
     const auto finish{std::chrono::steady_clock::now()};
     const std::chrono::duration<double> elapsed_seconds{finish - start};
 
-    for(const string& s: r){
+    for (const string &s : r)
+    {
 
-        cout<<s<<endl;
+        cout <<"\""<<s <<"\""<< endl;
     }
 
-    std::cout <<"\nElapsed time: "<<elapsed_seconds<<endl;
-    
-
-    
+    std::cout << "\nElapsed time: " << elapsed_seconds << endl;
 
     system("pause");
     return 0;
